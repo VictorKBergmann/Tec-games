@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a429e3d98af47844c8856a94d90a0987
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spriteRock0: {fileID: 21300000, guid: 746237a3d811ca24a9512eb433f5efc7, type: 3}
+  - spriteRock1: {fileID: 21300000, guid: d3556c9f9a1c69f48abae822a43addb3, type: 3}
+  - spriteRock2: {fileID: 21300000, guid: a5aab87f2653b1440b5c18f5cae145ea, type: 3}
+  - prefabRock: {fileID: 6483058474430504015, guid: 0e7c397811e5a914ca3580ee31ae5917,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
