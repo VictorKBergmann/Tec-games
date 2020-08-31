@@ -23,11 +23,10 @@ public class Personagem : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.Space)) && !jumpTimer.Running && !bateu)
         {
-            rb.velocity = (new Vector2(0, 15));
+            rb.velocity = (new Vector2(0, 20));
             jumpTimer.Run();
             jumped = true;
         }
-
 
     }
 
@@ -36,6 +35,7 @@ public class Personagem : MonoBehaviour
         if (collision.CompareTag("Finish"))
         {
             bateu = true;
+            GetComponent<Animator>().enabled = false;
         }
     }
     public bool getBateu()

@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/menu.unity
     guid: 9e77395328e772140bc6828e50437103
   - enabled: 1
-    path: Assets/Scenes/game.unity
+    path: Assets/Scenes/GhostFace.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Freddy.unity
+    guid: 137be35c67edcca4ea63190e104afd74
+  - enabled: 1
+    path: Assets/Scenes/menuGhostFace.unity
+    guid: f43c3c8596e9dae4bb159b4e56220db4
+  - enabled: 1
+    path: Assets/Scenes/menuFreddy.unity
+    guid: 6f446963542fd28499c68d5d82897768
   m_configObjects: {}

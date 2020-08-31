@@ -54,6 +54,11 @@ public class Timer : MonoBehaviour
             running = true;
         }
     }
+    public void pause()
+    {
+        running = false;
+    }
+
     public bool Running
     {
         get

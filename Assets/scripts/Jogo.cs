@@ -11,7 +11,7 @@ public class Jogo : MonoBehaviour
     Personagem personagem;
     Background[] background;
     Vilao vilao;
-    private float velocidade = 5;
+    private float velocidade = 7;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +35,7 @@ public class Jogo : MonoBehaviour
        
         if (!personagem.getBateu())
             {
-            velocidade += .3f * Time.deltaTime;
+            velocidade += .5f * Time.deltaTime;
             }
         else
         {
@@ -49,8 +49,12 @@ public class Jogo : MonoBehaviour
             Application.Quit();
 
         if (Input.GetKeyDown("r"))
-            SceneManager.LoadScene("game");
-        
+            if (Random.Range(0, 2) == 0)
+                SceneManager.LoadScene("GhostFace");
+            else
+                SceneManager.LoadScene("Freddy");
+
+
 
     }
 

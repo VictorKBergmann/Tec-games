@@ -5,17 +5,17 @@ using UnityEngine;
 public class Vilao : MonoBehaviour
 {
     private Timer jumpTimer;
-    private int jump = 0;
+    //private int jump = 0;
     private Rigidbody2D rb;
     private Personagem personagem;
     public float velocidade;
     private bool caminha = true;
     [SerializeField]
-    GameObject prefabExplosion;
 
     // Start is called before the first frame update
     void Start()
     {
+        velocidade = 1;
         personagem = FindObjectOfType<Personagem>();
         jumpTimer = gameObject.AddComponent<Timer>();
         
@@ -34,24 +34,23 @@ public class Vilao : MonoBehaviour
         }
         if(jumpTimer.finished && personagem.jumped)
         {
-            rb.velocity = (new Vector2(0, 15));
+            rb.velocity = (new Vector2(0, 20));
             jumpTimer.Started = false;
             personagem.jumped = false;
-        }
-        //Debug.Log(caminha.ToString());
+        }        
         if(velocidade == 0 && caminha)
         {
-            transform.position += Vector3.right * Time.deltaTime;
+            transform.position += Vector3.right * Time.deltaTime * 3;
+            GetComponent<Animator>().SetBool("rodando", true);
         }
-
+        transform.rotation = new Quaternion();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             caminha = false;
-            GameObject explosion = Instantiate<GameObject>(prefabExplosion);
-            explosion.transform.position = gameObject.transform.position + Vector3.back;
+            
         }
     }
 }

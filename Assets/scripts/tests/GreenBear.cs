@@ -12,7 +12,7 @@ public class GreenBear : MonoBehaviour
     {
         float angle = Random.Range(0, 2 * Mathf.PI);
         Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-        float magnitude = Random.Range(1, 5);
+        float magnitude = Random.Range(1, 2);
         GetComponent<Rigidbody2D>().AddForce(direction * magnitude, ForceMode2D.Impulse);
         deathTimer = gameObject.AddComponent<Timer>();
         deathTimer.Duration = TeddyBearLifespanSeconds;
@@ -27,5 +27,14 @@ public class GreenBear : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("collision.relativeVelocity: " + collision.relativeVelocity);
+        List<ContactPoint2D> contact = new List<ContactPoint2D>();
+        collision.GetContacts(contact);
+        for (int i = 0;contact.Count != i; i++)
+        {
+            Debug.DrawLine(collision.GetContact(i).point, collision.GetContact(i).normal);
+        }
+    }
 }

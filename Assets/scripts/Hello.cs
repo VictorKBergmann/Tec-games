@@ -70,7 +70,7 @@ public class Hello : MonoBehaviour
 		Vector3 worldLocation = Camera.main.ScreenToWorldPoint(location);
 		
 		// set random Prefab for new teddy bear
-		int spriteNumber = Random.Range(0, 2);
+		int spriteNumber = Random.Range(0, 1);
 		if (spriteNumber == 0)
 		{
 			GameObject teddyBear = Instantiate(prefabTeddyBear0) as GameObject;

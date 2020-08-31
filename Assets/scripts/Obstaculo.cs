@@ -8,16 +8,43 @@ public class Obstaculo : MonoBehaviour
     Timer deathTimer;
     public float velocidade;
     Personagem personagem;
+    public Sprite o1, o2, o3, o4, o5, o6, o7;
     void Start()
     {
         personagem = FindObjectOfType<Personagem>();
 
-        deathTimer = gameObject.AddComponent<Timer>();
-        deathTimer.Duration = 10;
-        deathTimer.Run();
-
-        transform.position = new Vector3(10, -3.82f, 0);
+        transform.position = new Vector3(10, -4.7f,0);
         transform.GetComponent<Rigidbody2D>();
+
+
+
+        int rand = Random.Range(1, 8);
+        switch (rand)
+        {
+            case 1:
+                GetComponent<SpriteRenderer>().sprite = o1;
+                break;
+            case 2:
+                GetComponent<SpriteRenderer>().sprite = o2;
+                break;
+            case 3:
+                GetComponent<SpriteRenderer>().sprite = o3;
+                break;
+            case 4:
+                GetComponent<SpriteRenderer>().sprite = o4;
+                break;
+            case 5:
+                GetComponent<SpriteRenderer>().sprite = o5;
+                break;
+            case 6:
+                GetComponent<SpriteRenderer>().sprite = o6;
+                break;
+            case 7:
+                GetComponent<SpriteRenderer>().sprite = o7;
+                break;
+
+        }
+
     }
 
     // Update is called once per frame
@@ -30,6 +57,4 @@ public class Obstaculo : MonoBehaviour
         }
         GetComponent<Rigidbody2D>().velocity = new Vector2(-velocidade, 0);
     }
-
-
 }
